@@ -15,4 +15,3 @@ class Solution:
                 l=r
                 r=r+1
         return m
-            
