@@ -3,8 +3,6 @@
 
 from typing import List
 import itertools
-
-
 class Solution:
     def rotate(self, matrix: List[List[int]]) -> None:
         """
