@@ -10,16 +10,17 @@ class Node:
         self.next = next
 """
 
+
 class Solution:
     def connect(self, root: 'Optional[Node]') -> 'Optional[Node]':
         if root is None:
             return root
         else:
-            q=[root]
-            while len(q)!=0:
-                l=len(q)
+            q = [root]
+            while len(q) != 0:
+                l = len(q)
                 for i in range(l):
-                    temp=q.pop(0)
+                    temp = q.pop(0)
                     if i == l-1:
                         temp.next = None
                     else:
@@ -29,5 +30,25 @@ class Solution:
                     if temp.right:
                         q.append(temp.right)
             return root
-                    
-        
+
+
+# solution using only one loop
+class Solution:
+    def connect(self, root: 'Optional[Node]') -> 'Optional[Node]':
+        if root is None:
+            return root
+        else:
+            q = [root]
+            qn = []
+            while len(q):
+                temp = q.pop(0)
+                if temp.left:
+                    qn.append(temp.left)
+                if temp.right:
+                    qn.append(temp.right)
+                if q:
+                    temp.next = q[0]
+                else:
+                    q = qn
+                    qn = []
+            return root

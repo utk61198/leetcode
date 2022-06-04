@@ -28,6 +28,7 @@ class Solution:
                         q.append(temp.left)
                     if temp.right:
                         q.append(temp.right)
+                # id direction is 1 add the elements on ans_temp into ans in a reverse fashion
                 if direction == 1:
                     ans.append(ans_temp[::-1])
                     direction = -1
