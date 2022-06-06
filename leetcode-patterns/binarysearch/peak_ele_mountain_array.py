@@ -2,21 +2,19 @@
 # https://leetcode.com/problems/peak-index-in-a-mountain-array/
 
 from typing import List
+
+# binary search solution, the question constraints says that peak element is guaranteed
 class Solution:
     def peakIndexInMountainArray(self, arr: List[int]) -> int:
-        peak = len(arr)//2
-        ans = arr[peak]
+        l = 0
+        h = len(arr) - 1
         
-        while True:
-            if peak == 0 or peak == len(arr) - 1:
-                ans = peak
-                break
-            else:
-                if arr[peak] > arr[peak-1] and arr[peak] > arr[peak+1]:
-                    ans = peak
-                    break
-                elif arr[peak] > arr[peak-1] and arr[peak] < arr[peak+1]:
-                    peak += 1
-                else:
-                    peak -= 1
-        return ans
+        while l < h:
+            m = (l + h) // 2
+            if arr[m-1] < arr[m] > arr[m+1]:
+                return m
+            elif arr[m-1] > arr[m]:
+                h = m
+            elif arr[m+1] > arr[m]:
+                l = m + 1
+        return -1
