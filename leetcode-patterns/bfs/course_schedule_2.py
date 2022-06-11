@@ -11,6 +11,9 @@ class Solution:
             graph[course_pair[1]].append(course_pair[0])
         ans = []
         visited = [0]*numCourses
+
+        # This is the same as detecting cyle while a DFS traversal,
+        # just add the element into the stack when all of it's neighbors are processed
         def topological_sort(node):
             if visited[node] == -1:
                 return True
@@ -23,7 +26,9 @@ class Solution:
             visited[node] = 1
             ans.append(node)
             return False
+
         for neighbor in range(numCourses):
+            # if there is a cycle just return an empty array
             if topological_sort(neighbor):
                 return []
         return ans[::-1]
