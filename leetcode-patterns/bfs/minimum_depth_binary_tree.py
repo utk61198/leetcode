@@ -10,7 +10,6 @@ class Solution:
     def minDepth(self, root: Optional[TreeNode]) -> int:
         if root == None:
             return 0
-        ans=999999
         q=[]
         q.append(root)
         level=1
