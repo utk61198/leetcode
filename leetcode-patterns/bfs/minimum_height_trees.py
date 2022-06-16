@@ -2,7 +2,6 @@
 
 from typing import List
 
-
 class Solution:
     def findMinHeightTrees(self, n: int, edges: List[List[int]]) -> List[int]:
         if len(edges) == 0:
@@ -41,3 +40,42 @@ class Solution:
 if __name__ == '__main__':
     obj = Solution()
     print(obj.findMinHeightTrees(6, [[0, 1], [0, 2], [0, 3], [3, 4], [4, 5]]))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
