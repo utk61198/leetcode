@@ -19,4 +19,3 @@ class Solution:
                 low = mid + 1
                 
         return letters[0] if low >= len(letters) else letters[low]
-        

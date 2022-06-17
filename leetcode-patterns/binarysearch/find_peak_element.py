@@ -11,12 +11,16 @@ class Solution:
         high = len(nums) - 1
         while low <= high:
             mid = (low + high) // 2
+            # id mid is 0 of last index and it is a peak one return mid
             if (mid == 0 and nums[mid] > nums[mid+1]) or (mid == len(nums) - 1 and nums[mid] > nums[mid-1]):
                 return mid
             if nums[mid-1] < nums[mid] > nums[mid+1]:
                 return mid
+            # if the element to the right is greater than mid, then the right half will always have a peak element  
             elif nums[mid+1] > nums[mid]:
                 low = mid + 1
+
+            # if the element to the left is greater than the mid, then the left half will always have the peak element
             elif nums[mid-1] > nums[mid]:
                 high = mid - 1
         return -1
@@ -24,4 +28,4 @@ class Solution:
 
 if __name__ == '__main__':
     obj = Solution()
-    obj.findPeakElement([1, 2])
+    print(obj.findPeakElement([1, 2]))
