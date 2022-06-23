@@ -2,6 +2,8 @@
 
 
 from typing import List
+from time import time_ns
+
 
 
 class Solution:
@@ -14,6 +16,7 @@ class Solution:
 
         # This is the same as detecting cyle while a DFS traversal,
         # just add the element into the stack when all of it's neighbors are processed
+
         def topological_sort(node):
             if visited[node] == -1:
                 return True

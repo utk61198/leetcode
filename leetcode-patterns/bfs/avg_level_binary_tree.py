@@ -25,4 +25,5 @@ class Solution:
                     if temp.right!=None:
                         q.append(temp.right)
                 ans.append(float(level_sum/total))
+                ans.
             return ans
